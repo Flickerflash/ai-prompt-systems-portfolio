@@ -80,3 +80,9 @@ Each file follows the same format:
 **Goal:** Handle failures gracefully (bad tools, missing data, unclear instructions) instead of crashing or hallucinating.
 - Outlines how the assistant should admit uncertainty and ask for clarification.
 - Includes examples of “good” vs “bad” recovery behavior.
+
+## How to Review This Repo in 3 Minutes
+
+- 1 minute: Skim the top of this README to see what the portfolio covers.
+- 1 minute: Open `01_state_anchor.md` and skim the goal, example, and notes.
+- 1 minute: Open any other file (e.g., `03_multi_agent_flow.md`) to see how I think about multi‑agent prompts and evaluation.
