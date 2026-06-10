@@ -1,10 +1,9 @@
 # NT-04 Prompt Spec: Define AI Governance Specification
 
-**Status:** ⭐ GOLD STAR  
+**Status:** ACTIVE  
 **NDR Patterns:** P-03 (Governance Contract Test), P-30 (Apogee Attestation Gate)  
 **NIST Controls:** GOVERN 1.7  
-**Run:** [needle.app/workflow-templates/implement-governance-multi-agent-orchestration](https://needle.app/workflow-templates/implement-governance-multi-agent-orchestration)  
-**P-30 Score:** 0.962 — PASS
+**Run:** [needle.app/workflow-templates/implement-governance-multi-agent-orchestration](https://needle.app/workflow-templates/implement-governance-multi-agent-orchestration)
 
 ---
 
@@ -71,7 +70,7 @@ TASK:
 ## Multi-Agent Role
 
 NT-04 is the **definition layer** — it produces the spec that all other templates
-evaluate against. The governance chain is:
+evaluate against:
 
 ```
 NT-04 (define spec)

@@ -14,7 +14,7 @@
     "Q2_source_grounding": 0.98,
     "Q3_logical_consistency": 0.97,
     "Q4_completeness": 0.96,
-    "Q5_ip_safety":1.00,
+    "Q5_ip_safety": 1.00,
     "Q6_hallucination_rate": 0.99,
     "Q7_drift_from_intent": 0.95,
     "Q8_standard_alignment": 0.97,

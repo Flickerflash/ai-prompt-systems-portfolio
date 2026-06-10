@@ -1,10 +1,9 @@
 # NT-01 Prompt Spec: Evaluate LLM Output Quality
 
-**Status:** ⭐ GOLD STAR  
+**Status:** ACTIVE  
 **NDR Patterns:** P-03 (Governance Contract Test), P-11 (11Q Attestation Scoring)  
 **NIST Controls:** GOVERN 1.7, MEASURE 2.5  
-**Run:** [needle.app/workflow-templates/evaluate-ai-output-quality](https://needle.app/workflow-templates/evaluate-ai-output-quality)  
-**P-30 Score:** 0.955 — PASS
+**Run:** [needle.app/workflow-templates/evaluate-ai-output-quality](https://needle.app/workflow-templates/evaluate-ai-output-quality)
 
 ---
 
