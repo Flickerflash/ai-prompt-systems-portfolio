@@ -1,8 +1,10 @@
 # NT-03 Prompt Spec: KB Answer With Quality Check
 
+**Status:** ⭐ GOLD STAR  
 **NDR Patterns:** P-05 (Tri-Phase CI Gate), P-11 (11Q Attestation Scoring), P-30 (Apogee Gate)  
 **NIST Controls:** MEASURE 2.9  
-**Run:** [needle.app/t/kb-answer-quality-check](https://needle.app/t/kb-answer-quality-check)
+**Run:** [needle.app/workflow-templates/kb-answer-with-quality-check](https://needle.app/workflow-templates/kb-answer-with-quality-check)  
+**P-30 Score:** 0.970 — PASS (highest scorer)
 
 ---
 
@@ -52,12 +54,8 @@ TASK:
   "template_id": "NT-03",
   "run_id": "string",
   "timestamp": "ISO8601",
-  "retrieve_phase": {
-    "passages": [], "source_ids": []
-  },
-  "generate_phase": {
-    "answer": "string", "citations": []
-  },
+  "retrieve_phase": { "passages": [], "source_ids": [] },
+  "generate_phase": { "answer": "string", "citations": [] },
   "evaluate_phase": {
     "scores": { "Q1": 0.0, "Q11": 0.0 },
     "verdict": "PASS | FAIL | REVIEW",

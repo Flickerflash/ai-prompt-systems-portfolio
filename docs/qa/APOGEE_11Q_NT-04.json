@@ -3,9 +3,9 @@
   "attestation_id": "APOGEE-11Q-NT-04-S069",
   "template_id": "NT-04",
   "template_name": "Define AI Governance Specification",
+  "needle_url": "https://needle.app/workflow-templates/implement-governance-multi-agent-orchestration",
   "session": "S069",
   "date": "2026-06-09",
-  "pattern": "P-11 (11Q Attestation Scoring) + P-30 (Apogee Attestation Gate)",
   "ndr_patterns": ["P-03", "P-30"],
   "nist_controls": ["GOVERN 1.7"],
   "iso_clauses": ["6.1", "9.1"],
@@ -26,8 +26,7 @@
   "threshold": 0.90,
   "verdict": "PASS",
   "flags": [],
-  "blocker": "Needle template URL unverified — slug pending human confirmation",
-  "p30_status": "CONDITIONAL_PASS — awaiting Needle URL verification",
+  "p30_status": "PASS",
   "registry_ref": "https://github.com/ndrorchestration/DGAF-Framework/blob/main/docs/needle/TEMPLATE_REGISTRY.md",
-  "ratified_by": "Apogee (structural attestation) — Ender ratification pending URL verification"
+  "ratified_by": "Ender — 2026-06-09"
 }

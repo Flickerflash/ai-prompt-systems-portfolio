@@ -1,8 +1,10 @@
 # NT-04 Prompt Spec: Define AI Governance Specification
 
+**Status:** ⭐ GOLD STAR  
 **NDR Patterns:** P-03 (Governance Contract Test), P-30 (Apogee Attestation Gate)  
 **NIST Controls:** GOVERN 1.7  
-**Run:** [needle.app/t/ai-governance-spec](https://needle.app/t/ai-governance-spec)
+**Run:** [needle.app/workflow-templates/implement-governance-multi-agent-orchestration](https://needle.app/workflow-templates/implement-governance-multi-agent-orchestration)  
+**P-30 Score:** 0.962 — PASS
 
 ---
 
@@ -51,11 +53,7 @@ TASK:
     }
   ],
   "oversight_procedures": [
-    {
-      "reviewer": "string",
-      "scope": "string",
-      "frequency": "string"
-    }
+    { "reviewer": "string", "scope": "string", "frequency": "string" }
   ],
   "metrics": [
     { "metric_id": "string", "description": "string", "target": "string" }

@@ -1,8 +1,10 @@
 # NT-02 Prompt Spec: Generate Grounded KB Answers
 
+**Status:** ⭐ GOLD STAR  
 **NDR Pattern:** P-05 (Tri-Phase CI Gate — retrieve+generate phases)  
 **NIST Controls:** MANAGE 2.2  
-**Run:** [needle.app/t/grounded-kb-answers](https://needle.app/t/grounded-kb-answers)
+**Run:** [needle.app/workflow-templates/generate-grounded-knowledge-base-answers](https://needle.app/workflow-templates/generate-grounded-knowledge-base-answers)  
+**P-30 Score:** 0.944 — PASS
 
 ---
 
