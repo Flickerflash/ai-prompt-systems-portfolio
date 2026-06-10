@@ -1,0 +1,33 @@
+{
+  "$schema": "https://dgaf.local/schema/apogee-11q-v1.json",
+  "attestation_id": "APOGEE-11Q-NT-02-S069",
+  "template_id": "NT-02",
+  "template_name": "Generate Grounded KB Answers",
+  "session": "S069",
+  "date": "2026-06-09",
+  "pattern": "P-11 (11Q Attestation Scoring) + P-30 (Apogee Attestation Gate)",
+  "ndr_patterns": ["P-05", "P-30"],
+  "nist_controls": ["MANAGE 2.2"],
+  "iso_clauses": ["8.4"],
+  "scores": {
+    "Q1_factual_accuracy": 0.94,
+    "Q2_source_grounding": 0.97,
+    "Q3_logical_consistency": 0.96,
+    "Q4_completeness": 0.93,
+    "Q5_ip_safety": 1.00,
+    "Q6_hallucination_rate": 0.98,
+    "Q7_drift_from_intent": 0.94,
+    "Q8_standard_alignment": 0.95,
+    "Q9_auditability": 0.94,
+    "Q10_reversibility": 0.90,
+    "Q11_governance_traceability": 0.97
+  },
+  "composite_score": 0.944,
+  "threshold": 0.90,
+  "verdict": "PASS",
+  "flags": [],
+  "blocker": "Needle template URL unverified — slug pending human confirmation",
+  "p30_status": "CONDITIONAL_PASS — awaiting Needle URL verification",
+  "registry_ref": "https://github.com/ndrorchestration/DGAF-Framework/blob/main/docs/needle/TEMPLATE_REGISTRY.md",
+  "ratified_by": "Apogee (structural attestation) — Ender ratification pending URL verification"
+}

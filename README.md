@@ -11,6 +11,24 @@
 
 > **Lineage:** This is the **public-facing IP-safe portfolio** — a curated selection of prompt patterns safe for public display. It is distinct from the private `ai-prompt-engineering-portfolio` (full benchmark + Gold Star certification archive) and `AI-Prompt-Engineer` (historical archive with benchmark lineage). See [Prompt-Engineering Repo Map](#prompt-engineering-repo-map) below.
 
+---
+
+## Needle Templates — Governance Prompt Specs
+
+The [`specs/needle/`](specs/needle/) directory contains the prompt engineering specifications for four Needle.app governance workflow templates. Each spec includes prompt structure, evaluation rubric, multi-agent flow, and output schema.
+
+| Template Spec | NDR Patterns | NIST Controls | Run |
+|---|---|---|---|
+| [NT-01: Evaluate LLM Output Quality](specs/needle/NT-01-spec.md) | P-03, P-11 | GOVERN 1.7, MEASURE 2.5 | [needle.app →](https://needle.app/t/evaluate-llm-output-quality) |
+| [NT-02: Generate Grounded KB Answers](specs/needle/NT-02-spec.md) | P-05 | MANAGE 2.2 | [needle.app →](https://needle.app/t/grounded-kb-answers) |
+| [NT-03: KB Answer With Quality Check](specs/needle/NT-03-spec.md) | P-05, P-11, P-30 | MEASURE 2.9 | [needle.app →](https://needle.app/t/kb-answer-quality-check) |
+| [NT-04: Define AI Governance Specification](specs/needle/NT-04-spec.md) | P-03, P-30 | GOVERN 1.7 | [needle.app →](https://needle.app/t/ai-governance-spec) |
+
+**NIST/ISO mapping:** [ai-governance-frameworks/docs/needle-templates/](https://github.com/ndrorchestration/ai-governance-frameworks/tree/main/docs/needle-templates)  
+**Canonical registry:** [DGAF-Framework/docs/needle/TEMPLATE_REGISTRY.md](https://github.com/ndrorchestration/DGAF-Framework/blob/main/docs/needle/TEMPLATE_REGISTRY.md)
+
+---
+
 ## Quick Overview (In Plain Language)
 
 This repo is my **AI Prompt Engineering Portfolio**.
@@ -70,7 +88,7 @@ Each file follows the same format:
 
 **File:** `01_state_anchor.md`
 
-**Goal:** Keep an assistant consistently "on persona" and in scope across a long conversation.
+**Goal:** Keep an assistant consistently “on persona” and in scope across a long conversation.
 - Shows how I define role, boundaries, and what to ignore.
 - Includes a short checklist I use to check if the assistant stayed anchored.
 
@@ -86,16 +104,16 @@ Each file follows the same format:
 
 **File:** `03_multi_agent_flow.md`
 
-**Goal:** Show how multiple AI "roles" can cooperate (e.g., Researcher → Critic → Editor).
+**Goal:** Show how multiple AI “roles” can cooperate (e.g., Researcher → Critic → Editor).
 - High‑level description of the roles and their responsibilities.
 - Example of a review loop where one agent checks another against a radix.
 
-## 4. Parametric ("Dial") Constraint Example
+## 4. Parametric (“Dial”) Constraint Example
 
 **File:** `04_parametric_constraint.md`
 
-**Goal:** Demonstrate that I can tune behavior along a "dial" (e.g., strictness), **without** exposing proprietary math or full methodology.
-- Describes a parameter like "strictness" and how it changes outputs.
+**Goal:** Demonstrate that I can tune behavior along a “dial” (e.g., strictness), **without** exposing proprietary math or full methodology.
+- Describes a parameter like “strictness” and how it changes outputs.
 - Shows how I would document and test different parameter settings.
 
 ## 5. Error Recovery & Robustness Prompt
@@ -104,7 +122,7 @@ Each file follows the same format:
 
 **Goal:** Handle failures gracefully (bad tools, missing data, unclear instructions) instead of crashing or hallucinating.
 - Outlines how the assistant should admit uncertainty and ask for clarification.
-- Includes examples of "good" vs "bad" recovery behavior.
+- Includes examples of “good” vs “bad” recovery behavior.
 
 ## How to Review This Repo in 3 Minutes
 
@@ -124,6 +142,7 @@ This portfolio organizes prompts into four semantic categories:
 ### Workflows
 - **Multi-Agent Orchestration** (`03_multi_agent_flow.md`): Sequential agent cooperation
 - **Error Recovery** (`05_error_recovery.md`): Graceful failure handling
+- **Needle Governance Templates** (`specs/needle/`): DGAF-governed prompt specs with 11Q rubrics
 
 ### Rubrics
 Each prompt includes a **pass/fail evaluation rubric**:
@@ -169,6 +188,7 @@ See `specs/example.yaml` for a complete example.
 ## Related Projects
 
 - [DGAF-Framework](https://github.com/ndrorchestration/DGAF-Framework) — governance spine
+- [ai-governance-frameworks](https://github.com/ndrorchestration/ai-governance-frameworks) — NIST/ISO implementation artifacts
 - [junior-apogee-app](https://github.com/ndrorchestration/junior-apogee-app) — primary agent evaluation platform
 - [resumeapex-eval](https://github.com/ndrorchestration/resumeapex-eval) — flagship benchmark
 - [Gold-star-standards](https://github.com/ndrorchestration/Gold-star-standards) — certification rubrics (private)
