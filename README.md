@@ -1,21 +1,20 @@
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
 ![License](https://img.shields.io/badge/License-Apache%202.0-01696f?style=flat-square)
 ![Language](https://img.shields.io/badge/Language-Python-blue?style=flat-square)
-![Governed](https://img.shields.io/badge/Governed%20by-DGAF--Framework-7a39bb?style=flat-square)
 ![IP Safe](https://img.shields.io/badge/IP--Safe%20Samples-public-4f98a3?style=flat-square)
 ![Maintained](https://img.shields.io/badge/Maintained-yes-437a22?style=flat-square)
 
-> **Governance:** DGAF / Agent Amethyst — Curated under DGAF evaluation standards. IP-safe samples only. Governed by [DGAF-Framework](https://github.com/ndrorchestration/DGAF-Framework).
+> **Scope:** Public, IP-safe prompt-engineering portfolio. DGAF and other project references describe related workflows or mappings; they do not imply external certification or that every artifact in this repository has passed a common validation gate.
 
-> **Status: Stable — actively maintained.** Commit gaps reflect curation cadence, not abandonment. New samples added when eval-validated.
+> **Status: Active work-in-progress.** Some artifacts are documented experiments, some are more mature evaluation specifications, and some are examples intended primarily for public demonstration. Check the individual artifact and evaluation evidence before treating a claim as validated.
 
-> **Lineage:** This is the **public-facing IP-safe portfolio** — a curated selection of prompt patterns safe for public display. It is distinct from the private `ai-prompt-engineering-portfolio` (full benchmark + Gold Star certification archive) and `AI-Prompt-Engineer` (historical archive with benchmark lineage). See [Prompt-Engineering Repo Map](#prompt-engineering-repo-map) below.
+> **Lineage:** This is the **public-facing IP-safe portfolio** — a curated selection of prompt patterns safe for public display. It is distinct from the private `ai-prompt-engineering-portfolio` and `AI-Prompt-Engineer` archives. Repository relationships do not by themselves establish that one repository validates another.
 
 ---
 
-## Needle Templates — Governance Prompt Specs
+## Needle Templates — Prompt Specifications
 
-The [`specs/needle/`](specs/needle/) directory contains the prompt engineering specifications for four Needle.app governance workflow templates. Each spec includes prompt structure, evaluation rubric, multi-agent flow, and output schema.
+The [`specs/needle/`](specs/needle/) directory contains prompt-engineering specifications for four Needle.app workflow templates. Each spec may include prompt structure, evaluation rubric, multi-agent flow, and output schema.
 
 | Template Spec | NDR Patterns | NIST Controls | Run |
 |---|---|---|---|
@@ -27,26 +26,27 @@ The [`specs/needle/`](specs/needle/) directory contains the prompt engineering s
 **NIST/ISO mapping:** [ai-governance-frameworks/docs/needle-templates/](https://github.com/ndrorchestration/ai-governance-frameworks/tree/main/docs/needle-templates)  
 **Canonical registry:** [DGAF-Framework/docs/needle/TEMPLATE_REGISTRY.md](https://github.com/ndrorchestration/DGAF-Framework/blob/main/docs/needle/TEMPLATE_REGISTRY.md)
 
+References to NIST/ISO controls are mappings, not evidence of certification or endorsement.
+
 ---
 
-## Quick Overview (In Plain Language)
+## Quick Overview
 
-This repo is my **AI Prompt Engineering Portfolio**.
+This repo is an **AI Prompt Engineering Portfolio**.
 
-In simple terms:
-- It collects real prompts I've designed for different use cases (agents, apps, workflows).
-- It shows how I structure system prompts, instructions, and guardrails.
-- It includes example tasks and model outputs so you can see how the prompts actually perform.
+It collects public examples of prompts and workflow patterns designed for agents, applications, and evaluation workflows. It shows how system prompts, instructions, constraints, and evaluation rubrics are structured.
 
-Right now this is an **active work-in-progress**:
-- Some prompts are fully documented with inputs, outputs, and my evaluation notes.
-- Others are early drafts or experiments.
-- The goal is to make it easy for you to scan how I think about reliability, safety, and clarity in prompt design.
+The repository is an active work-in-progress:
 
-If you're a recruiter or engineer:
-- Start by skimming one or two prompts in the `systems/` or `examples/` folders.
-- Look for my comments and evaluation notes to see how I debug and improve prompts.
-- Use this repo together with **junior-apogee-app** to see how prompts flow into evaluation.
+- Some prompts are fully documented with inputs, outputs, and evaluation notes.
+- Others are drafts or experiments.
+- Evaluation notes describe the evidence available for the particular artifact; they should not be generalized to the entire repository.
+
+If you're reviewing the portfolio:
+
+- Start with one or two prompts in `systems/` or `examples/`.
+- Review the associated evaluation notes and failure modes.
+- Use `junior-apogee-app` as a separate related project where appropriate; the relationship does not imply that every prompt here has been evaluated there.
 
 ---
 
@@ -55,20 +55,20 @@ If you're a recruiter or engineer:
 | Repo | Visibility | Purpose | Status |
 |------|-----------|---------|--------|
 | **`ai-prompt-systems-portfolio`** (this repo) | Public | IP-safe curated samples — recruiter/engineer entry point | Active |
-| `ai-prompt-engineering-portfolio` | Private | Full benchmark archive, Gold Star certification records, DGAF-governed master set | Active |
-| `AI-Prompt-Engineer` | Private | Historical benchmark lineage — origin archive, pre-DGAF era | Archive/Reference |
+| `ai-prompt-engineering-portfolio` | Private | Full benchmark/archive material | Active |
+| `AI-Prompt-Engineer` | Private | Historical benchmark lineage / origin archive | Archive/Reference |
+
+Historical certification records, if present in private repositories, remain historical records unless independently re-established.
 
 ---
 
-# AI Prompt Systems Portfolio (IP‑Safe Samples)
+# AI Prompt Systems Portfolio (IP-Safe Samples)
 
-This repository contains a small set of **public, IP‑safe examples** of my AI prompt systems work.
-
-My private work includes more detailed frameworks (governance, frequency‑aware constraints, multi‑agent orchestration). Those are kept **private** to protect intellectual property and any future patentability. This repo is meant to show how I think and work, without exposing sensitive internals.
+This repository contains public, IP-safe examples of AI prompt systems work. Private work may contain more detailed frameworks and internal methodology that is intentionally not reproduced here.
 
 ## Structure
 
-Each entry lives in its own markdown file in this repo:
+Each entry lives in its own markdown file:
 
 1. `01_state_anchor.md`
 2. `02_constraint_gate.md`
@@ -76,94 +76,81 @@ Each entry lives in its own markdown file in this repo:
 4. `04_parametric_constraint.md`
 5. `05_error_recovery.md`
 
-Each file follows the same format:
+Each file follows the same general format:
 - Goal
 - Example prompt or system message (simplified)
-- Evaluation rubric (how I judge outputs)
+- Evaluation rubric
 - Notes on iteration and failure modes
 
----
+## Prompt examples
 
-## 1. State Anchor Prompt
+### 1. State Anchor Prompt
 
 **File:** `01_state_anchor.md`
 
-**Goal:** Keep an assistant consistently “on persona” and in scope across a long conversation.
-- Shows how I define role, boundaries, and what to ignore.
-- Includes a short checklist I use to check if the assistant stayed anchored.
+**Goal:** Keep an assistant consistently on persona and in scope across a long conversation.
 
-## 2. Constraint Gate (Guardrail)
+### 2. Constraint Gate
 
 **File:** `02_constraint_gate.md`
 
-**Goal:** Enforce a small set of **non‑negotiable rules** (e.g., no legal advice, no internal tool names).
-- Shows how I structure constraints in plain language.
-- Includes a simple pass/fail rubric for whether the model respected constraints.
+**Goal:** Enforce a small set of non-negotiable rules and document pass/fail behavior.
 
-## 3. Multi‑Agent Orchestration Pattern
+### 3. Multi-Agent Orchestration Pattern
 
 **File:** `03_multi_agent_flow.md`
 
-**Goal:** Show how multiple AI “roles” can cooperate (e.g., Researcher → Critic → Editor).
-- High‑level description of the roles and their responsibilities.
-- Example of a review loop where one agent checks another against a radix.
+**Goal:** Show how multiple AI roles can cooperate, for example Researcher → Critic → Editor.
 
-## 4. Parametric (“Dial”) Constraint Example
+### 4. Parametric Constraint Example
 
 **File:** `04_parametric_constraint.md`
 
-**Goal:** Demonstrate that I can tune behavior along a “dial” (e.g., strictness), **without** exposing proprietary math or full methodology.
-- Describes a parameter like “strictness” and how it changes outputs.
-- Shows how I would document and test different parameter settings.
+**Goal:** Demonstrate tunable behavior while keeping proprietary methodology out of the public example.
 
-## 5. Error Recovery & Robustness Prompt
+### 5. Error Recovery & Robustness Prompt
 
 **File:** `05_error_recovery.md`
 
-**Goal:** Handle failures gracefully (bad tools, missing data, unclear instructions) instead of crashing or hallucinating.
-- Outlines how the assistant should admit uncertainty and ask for clarification.
-- Includes examples of “good” vs “bad” recovery behavior.
+**Goal:** Handle failures such as missing data, tool failures, and unclear instructions without fabricating certainty.
+
+---
 
 ## How to Review This Repo in 3 Minutes
 
-- 1 minute: Skim the top of this README to see what the portfolio covers.
-- 1 minute: Open `01_state_anchor.md` and skim the goal, example, and notes.
-- 1 minute: Open any other file (e.g., `03_multi_agent_flow.md`) to see how I think about multi‑agent prompts and evaluation.
+- 1 minute: Skim this README.
+- 1 minute: Open `01_state_anchor.md` and review the goal, example, and evaluation notes.
+- 1 minute: Open another artifact such as `03_multi_agent_flow.md` and inspect its documented failure modes.
 
 ## Taxonomy: Patterns & Workflows
 
-This portfolio organizes prompts into four semantic categories:
-
 ### Patterns
-- **State Anchor Prompt** (`01_state_anchor.md`): Maintain role consistency
-- **Constraint Gate** (`02_constraint_gate.md`): Enforce non-negotiable rules
-- **Parametric Constraints** (`04_parametric_constraint.md`): Tune behavior along a dial
+- **State Anchor Prompt** — maintain role consistency
+- **Constraint Gate** — enforce non-negotiable rules
+- **Parametric Constraints** — tune behavior along a documented parameter
 
 ### Workflows
-- **Multi-Agent Orchestration** (`03_multi_agent_flow.md`): Sequential agent cooperation
-- **Error Recovery** (`05_error_recovery.md`): Graceful failure handling
-- **Needle Governance Templates** (`specs/needle/`): DGAF-governed prompt specs with 11Q rubrics
+- **Multi-Agent Orchestration** — sequential agent cooperation
+- **Error Recovery** — graceful failure handling
+- **Needle Templates** — project-specific prompt specifications with documented evaluation criteria
 
 ### Rubrics
-Each prompt includes a **pass/fail evaluation rubric**:
-- Does the output respect constraints?
-- Does the output stay on-topic and in-role?
-- Is uncertainty handled gracefully?
+Prompt artifacts may include pass/fail or scored evaluation rubrics. A rubric defines a local evaluation procedure; it does not establish external certification.
 
 ### Playbooks
-See `specs/` folder for machine-readable evaluation specifications (YAML/JSON) that can be used to assess prompt outputs programmatically.
+See `specs/` for machine-readable evaluation specifications where present.
 
 ---
 
 ## Evaluation Specs & CLI
 
-To evaluate a prompt output against a rubric:
+To evaluate a prompt output against a rubric, where the referenced CLI and spec exist in the current checkout:
 
 ```bash
 python -m portfolio.eval specs/example.yaml --input "<prompt>" --output "<model response>"
 ```
 
-Specs live in `specs/` and follow this structure:
+Specs live in `specs/` and may use structures such as:
 
 ```yaml
 name: "State Anchor Evaluation"
@@ -183,13 +170,21 @@ rules:
     then: "pass = false"
 ```
 
-See `specs/example.yaml` for a complete example.
+## Epistemic standard
+
+Use the repository-wide distinction:
+
+`DEFINED → IMPLEMENTED → COMPUTED → VERIFIED → ATTESTED → HISTORICAL → HYPOTHESIS → METAPHOR → UNSUPPORTED → DEPRECATED`
+
+A prompt specification is not proof of model performance. A local evaluation run is not proof of generalization. A historical benchmark is not current validation without a reproducible run.
 
 ## Related Projects
 
-- [DGAF-Framework](https://github.com/ndrorchestration/DGAF-Framework) — governance spine
-- [ai-governance-frameworks](https://github.com/ndrorchestration/ai-governance-frameworks) — NIST/ISO implementation artifacts
-- [junior-apogee-app](https://github.com/ndrorchestration/junior-apogee-app) — primary agent evaluation platform
-- [resumeapex-eval](https://github.com/ndrorchestration/resumeapex-eval) — flagship benchmark
-- [Gold-star-standards](https://github.com/ndrorchestration/Gold-star-standards) — certification rubrics (private)
-- [sentinel-governance](https://github.com/ndrorchestration/sentinel-governance) — CI/CD governance enforcement
+- `DGAF-Framework` — related governance/evaluation research track
+- `ai-governance-frameworks` — external-framework mapping and governance artifacts
+- `junior-apogee-app` — related agent evaluation application
+- `resumeapex-eval` — related evaluation/benchmark project
+- `Gold-star-standards` — related rubric/standards repository
+- `sentinel-governance` — related CI/governance enforcement track
+
+These are separate repositories. Cross-references do not constitute mutual validation.
