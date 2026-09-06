@@ -37,6 +37,8 @@ jobs:
       - name: Verify evidence boundary
         run: |
           set -euo pipefail
-          grep -Fq 'no `portfolio` Python package in this repository' README.md
+          grep -Fq 'does not currently ship a supported Python evaluation package or CLI' README.md
           grep -Fq 'not an executable evaluator by themselves' README.md
           grep -Fq 'cross-repository references do not transfer validation' README.md
+          grep -Fq 'not an executable evaluation harness' specs/README.md
+          grep -Fq 'Cross-repository references do not transfer validation' specs/README.md
