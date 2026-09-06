@@ -29,11 +29,14 @@ jobs:
           test -s NOTICE
       - name: Reject phantom evaluator documentation
         run: |
-          if grep -R "python -m portfolio.eval" README.md specs docs 2>/dev/null; then
+          set -euo pipefail
+          if grep -R -F "python -m portfolio.eval" README.md specs docs 2>/dev/null; then
             echo "Unsupported portfolio.eval command remains documented."
             exit 1
           fi
       - name: Verify evidence boundary
         run: |
-          grep -q "no.*portfolio.*Python package\|no `portfolio` Python package" README.md
-          grep -q "not an executable evaluator" README.md
+          set -euo pipefail
+          grep -Fq 'no `portfolio` Python package in this repository' README.md
+          grep -Fq 'not an executable evaluator by themselves' README.md
+          grep -Fq 'cross-repository references do not transfer validation' README.md
