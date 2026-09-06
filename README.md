@@ -1,190 +1,99 @@
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
-![License](https://img.shields.io/badge/License-Apache%202.0-01696f?style=flat-square)
-![Language](https://img.shields.io/badge/Language-Python-blue?style=flat-square)
-![IP Safe](https://img.shields.io/badge/IP--Safe%20Samples-public-4f98a3?style=flat-square)
-![Maintained](https://img.shields.io/badge/Maintained-yes-437a22?style=flat-square)
+# AI Prompt Systems Portfolio
 
-> **Scope:** Public, IP-safe prompt-engineering portfolio. DGAF and other project references describe related workflows or mappings; they do not imply external certification or that every artifact in this repository has passed a common validation gate.
+**Public, IP-safe examples of prompt-system design, evaluation rubrics, multi-agent workflow patterns, and failure-aware instruction engineering.**
 
-> **Status: Active work-in-progress.** Some artifacts are documented experiments, some are more mature evaluation specifications, and some are examples intended primarily for public demonstration. Check the individual artifact and evaluation evidence before treating a claim as validated.
+> **Status:** Active work-in-progress. This repository demonstrates design artifacts and local evaluation specifications. A prompt spec or rubric is not evidence of general model performance, external certification, or validation of another repository.
 
-> **Lineage:** This is the **public-facing IP-safe portfolio** — a curated selection of prompt patterns safe for public display. It is distinct from the private `ai-prompt-engineering-portfolio` and `AI-Prompt-Engineer` archives. Repository relationships do not by themselves establish that one repository validates another.
+## Start here
 
----
+For a fast review, these three artifacts show the clearest range of the work:
 
-## Needle Templates — Prompt Specifications
+1. **[State Anchor](01_state_anchor.md)** — maintaining role/scope consistency across a long interaction, with explicit failure conditions.
+2. **[Multi-Agent Flow](03_multi_agent_flow.md)** — a structured Researcher → Critic → Editor pattern with role boundaries and evaluation notes.
+3. **[Error Recovery](05_error_recovery.md)** — fail-safe handling for missing data, tool failure, and ambiguous instructions without fabricating certainty.
 
-The [`specs/needle/`](specs/needle/) directory contains prompt-engineering specifications for four Needle.app workflow templates. Each spec may include prompt structure, evaluation rubric, multi-agent flow, and output schema.
+Each has a corresponding machine-readable evaluation specification under [`specs/`](specs/).
 
-| Template Spec | NDR Patterns | NIST Controls | Run |
-|---|---|---|---|
-| [NT-01: Evaluate LLM Output Quality](specs/needle/NT-01-spec.md) | P-03, P-11 | GOVERN 1.7, MEASURE 2.5 | [needle.app →](https://needle.app/t/evaluate-llm-output-quality) |
-| [NT-02: Generate Grounded KB Answers](specs/needle/NT-02-spec.md) | P-05 | MANAGE 2.2 | [needle.app →](https://needle.app/t/grounded-kb-answers) |
-| [NT-03: KB Answer With Quality Check](specs/needle/NT-03-spec.md) | P-05, P-11, P-30 | MEASURE 2.9 | [needle.app →](https://needle.app/t/kb-answer-quality-check) |
-| [NT-04: Define AI Governance Specification](specs/needle/NT-04-spec.md) | P-03, P-30 | GOVERN 1.7 | [needle.app →](https://needle.app/t/ai-governance-spec) |
+## What this repository demonstrates
 
-**NIST/ISO mapping:** [ai-governance-frameworks/docs/needle-templates/](https://github.com/ndrorchestration/ai-governance-frameworks/tree/main/docs/needle-templates)  
-**Canonical registry:** [DGAF-Framework/docs/needle/TEMPLATE_REGISTRY.md](https://github.com/ndrorchestration/DGAF-Framework/blob/main/docs/needle/TEMPLATE_REGISTRY.md)
+- system/instruction prompt structure;
+- explicit constraint gates;
+- state anchoring and scope control;
+- multi-agent role decomposition;
+- tunable/parametric behavior;
+- failure and recovery handling;
+- artifact-local evaluation rubrics;
+- public Needle template specifications;
+- evidence-conscious documentation of what has and has not been tested.
 
-References to NIST/ISO controls are mappings, not evidence of certification or endorsement.
+## Core artifact set
 
----
+| Artifact | Primary skill | Evaluation spec |
+|---|---|---|
+| [State Anchor](01_state_anchor.md) | State/scope consistency | [`specs/01_state_anchor_eval.yaml`](specs/01_state_anchor_eval.yaml) |
+| [Constraint Gate](02_constraint_gate.md) | Non-negotiable instruction boundaries | [`specs/02_constraint_gate_eval.yaml`](specs/02_constraint_gate_eval.yaml) |
+| [Multi-Agent Flow](03_multi_agent_flow.md) | Role decomposition/orchestration | [`specs/03_multi_agent_eval.yaml`](specs/03_multi_agent_eval.yaml) |
+| [Parametric Constraint](04_parametric_constraint.md) | Controlled behavioral tuning | [`specs/04_parametric_eval.yaml`](specs/04_parametric_eval.yaml) |
+| [Error Recovery](05_error_recovery.md) | Failure-aware prompting | [`specs/05_error_recovery_eval.yaml`](specs/05_error_recovery_eval.yaml) |
 
-## Quick Overview
+The YAML files are **evaluation specifications/data**, not an executable evaluator by themselves.
 
-This repo is an **AI Prompt Engineering Portfolio**.
+## Needle template specifications
 
-It collects public examples of prompts and workflow patterns designed for agents, applications, and evaluation workflows. It shows how system prompts, instructions, constraints, and evaluation rubrics are structured.
+[`specs/needle/`](specs/needle/) contains public specifications for Needle.app workflows, including evaluation structure, multi-agent flow, and output constraints where documented.
 
-The repository is an active work-in-progress:
+References to NIST/ISO controls are **mappings**, not evidence of certification, endorsement, or compliance.
 
-- Some prompts are fully documented with inputs, outputs, and evaluation notes.
-- Others are drafts or experiments.
-- Evaluation notes describe the evidence available for the particular artifact; they should not be generalized to the entire repository.
+Related external-framework mappings are maintained separately in `ai-governance-frameworks`; cross-repository references do not transfer validation.
 
-If you're reviewing the portfolio:
+## Evaluation status
 
-- Start with one or two prompts in `systems/` or `examples/`.
-- Review the associated evaluation notes and failure modes.
-- Use `junior-apogee-app` as a separate related project where appropriate; the relationship does not imply that every prompt here has been evaluated there.
+This repository previously documented an example command using `python -m portfolio.eval`. There is currently **no `portfolio` Python package in this repository**, so that command is not part of the supported public interface and has been removed.
 
----
+Current evidence consists of:
 
-## Prompt-Engineering Repo Map
+- checked-in prompt artifacts;
+- checked-in evaluation specifications;
+- artifact-specific notes and failure modes;
+- repository integrity checks that verify advertised public artifacts exist.
 
-| Repo | Visibility | Purpose | Status |
-|------|-----------|---------|--------|
-| **`ai-prompt-systems-portfolio`** (this repo) | Public | IP-safe curated samples — recruiter/engineer entry point | Active |
-| `ai-prompt-engineering-portfolio` | Private | Full benchmark/archive material | Active |
-| `AI-Prompt-Engineer` | Private | Historical benchmark lineage / origin archive | Archive/Reference |
+Executable benchmarking belongs in a repository that actually contains and tests an evaluation harness, such as `resumeapex-eval`, rather than being implied here.
 
-Historical certification records, if present in private repositories, remain historical records unless independently re-established.
-
----
-
-# AI Prompt Systems Portfolio (IP-Safe Samples)
-
-This repository contains public, IP-safe examples of AI prompt systems work. Private work may contain more detailed frameworks and internal methodology that is intentionally not reproduced here.
-
-## Structure
-
-Each entry lives in its own markdown file:
-
-1. `01_state_anchor.md`
-2. `02_constraint_gate.md`
-3. `03_multi_agent_flow.md`
-4. `04_parametric_constraint.md`
-5. `05_error_recovery.md`
-
-Each file follows the same general format:
-- Goal
-- Example prompt or system message (simplified)
-- Evaluation rubric
-- Notes on iteration and failure modes
-
-## Prompt examples
-
-### 1. State Anchor Prompt
-
-**File:** `01_state_anchor.md`
-
-**Goal:** Keep an assistant consistently on persona and in scope across a long conversation.
-
-### 2. Constraint Gate
-
-**File:** `02_constraint_gate.md`
-
-**Goal:** Enforce a small set of non-negotiable rules and document pass/fail behavior.
-
-### 3. Multi-Agent Orchestration Pattern
-
-**File:** `03_multi_agent_flow.md`
-
-**Goal:** Show how multiple AI roles can cooperate, for example Researcher → Critic → Editor.
-
-### 4. Parametric Constraint Example
-
-**File:** `04_parametric_constraint.md`
-
-**Goal:** Demonstrate tunable behavior while keeping proprietary methodology out of the public example.
-
-### 5. Error Recovery & Robustness Prompt
-
-**File:** `05_error_recovery.md`
-
-**Goal:** Handle failures such as missing data, tool failures, and unclear instructions without fabricating certainty.
-
----
-
-## How to Review This Repo in 3 Minutes
-
-- 1 minute: Skim this README.
-- 1 minute: Open `01_state_anchor.md` and review the goal, example, and evaluation notes.
-- 1 minute: Open another artifact such as `03_multi_agent_flow.md` and inspect its documented failure modes.
-
-## Taxonomy: Patterns & Workflows
-
-### Patterns
-- **State Anchor Prompt** — maintain role consistency
-- **Constraint Gate** — enforce non-negotiable rules
-- **Parametric Constraints** — tune behavior along a documented parameter
-
-### Workflows
-- **Multi-Agent Orchestration** — sequential agent cooperation
-- **Error Recovery** — graceful failure handling
-- **Needle Templates** — project-specific prompt specifications with documented evaluation criteria
-
-### Rubrics
-Prompt artifacts may include pass/fail or scored evaluation rubrics. A rubric defines a local evaluation procedure; it does not establish external certification.
-
-### Playbooks
-See `specs/` for machine-readable evaluation specifications where present.
-
----
-
-## Evaluation Specs & CLI
-
-To evaluate a prompt output against a rubric, where the referenced CLI and spec exist in the current checkout:
-
-```bash
-python -m portfolio.eval specs/example.yaml --input "<prompt>" --output "<model response>"
-```
-
-Specs live in `specs/` and may use structures such as:
-
-```yaml
-name: "State Anchor Evaluation"
-metrics:
-  - name: "role_consistency"
-    type: "boolean"
-    description: "Did the assistant stay in role?"
-  - name: "scope_adherence"
-    type: "boolean"
-    description: "Did the assistant respect boundaries?"
-  - name: "helpfulness"
-    type: "score"
-    min: 0
-    max: 5
-rules:
-  - if: "role_consistency == false"
-    then: "pass = false"
-```
-
-## Epistemic standard
+## Evidence standard
 
 Use the repository-wide distinction:
 
 `DEFINED → IMPLEMENTED → COMPUTED → VERIFIED → ATTESTED → HISTORICAL → HYPOTHESIS → METAPHOR → UNSUPPORTED → DEPRECATED`
 
-A prompt specification is not proof of model performance. A local evaluation run is not proof of generalization. A historical benchmark is not current validation without a reproducible run.
+Examples:
 
-## Related Projects
+- a written prompt pattern is **DEFINED**;
+- a checked-in prompt artifact/spec is **IMPLEMENTED as an artifact**;
+- a rubric result is **COMPUTED** only when an evaluator actually executes it;
+- a passing repository-integrity workflow verifies only the files/relationships it checks;
+- no local result should be generalized to unrelated models, datasets, tasks, or repositories without separate evidence.
 
-- `DGAF-Framework` — related governance/evaluation research track
-- `ai-governance-frameworks` — external-framework mapping and governance artifacts
-- `junior-apogee-app` — related agent evaluation application
-- `resumeapex-eval` — related evaluation/benchmark project
-- `Gold-star-standards` — related rubric/standards repository
-- `sentinel-governance` — related CI/governance enforcement track
+## Repository map
 
-These are separate repositories. Cross-references do not constitute mutual validation.
+- [`ARCHITECTURE.md`](ARCHITECTURE.md) — organization and design relationships.
+- [`specs/`](specs/) — artifact-local evaluation specifications.
+- [`best-practices/`](best-practices/) — supporting prompt-engineering guidance.
+- [`docs/`](docs/) — additional documentation/evidence notes.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — contribution expectations.
+
+## Relationship to other work
+
+- `resumeapex-eval` — separate executable evaluation/benchmark project.
+- `Orbit-Driftwatch` — separate observable multi-agent systems showcase.
+- `DGAF-Framework` — separate governance/evaluation research track.
+- `ai-governance-frameworks` — separate framework-mapping repository.
+
+These relationships describe portfolio architecture; they are not mutual validation claims.
+
+## License
+
+Apache-2.0. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).
+
+## Maintainer
+
+Ndr / Ender Hensel (`ndrorchestration`).
