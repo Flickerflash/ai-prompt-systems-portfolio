@@ -1,0 +1,39 @@
+name: Public portfolio integrity
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify core artifacts and evaluation specs
+        run: |
+          set -euo pipefail
+          for n in 01_state_anchor 02_constraint_gate 03_multi_agent_flow 04_parametric_constraint 05_error_recovery; do
+            test -s "${n}.md"
+          done
+          test -s specs/01_state_anchor_eval.yaml
+          test -s specs/02_constraint_gate_eval.yaml
+          test -s specs/03_multi_agent_eval.yaml
+          test -s specs/04_parametric_eval.yaml
+          test -s specs/05_error_recovery_eval.yaml
+          test -s LICENSE
+          test -s NOTICE
+      - name: Reject phantom evaluator documentation
+        run: |
+          if grep -R "python -m portfolio.eval" README.md specs docs 2>/dev/null; then
+            echo "Unsupported portfolio.eval command remains documented."
+            exit 1
+          fi
+      - name: Verify evidence boundary
+        run: |
+          grep -q "no.*portfolio.*Python package\|no `portfolio` Python package" README.md
+          grep -q "not an executable evaluator" README.md
