@@ -48,9 +48,7 @@ Related external-framework mappings are maintained separately in `ai-governance-
 
 ## Evaluation status
 
-This repository previously documented an example command using `python -m portfolio.eval`. There is currently **no `portfolio` Python package in this repository**, so that command is not part of the supported public interface and has been removed.
-
-Current evidence consists of:
+This repository does not currently ship a supported Python evaluation package or CLI. Current evidence consists of:
 
 - checked-in prompt artifacts;
 - checked-in evaluation specifications;
